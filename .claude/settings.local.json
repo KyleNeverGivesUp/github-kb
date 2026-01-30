@@ -2,7 +2,23 @@
   "permissions": {
     "allow": [
       "Bash(gh search:*)",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "WebSearch",
+      "WebFetch(domain:www.tavus.io)",
+      "Bash(gh repo view:*)",
+      "Bash(git pull)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout master)",
+      "Bash(git reset --hard origin/master)",
+      "Bash(git checkout dev)",
+      "Bash(chmod:*)",
+      "Bash(/Users/kyle/Projects/github-kb/auto-update-internships.sh:*)",
+      "Bash(git reset:*)",
+      "Bash(crontab:*)",
+      "Bash(mail:*)",
+      "Bash(mailq:*)",
+      "Bash(/Users/kyle/Projects/github-kb/auto-update-internships-discord.sh:*)",
+      "Bash(git rev-parse:*)"
     ]
   }
 }
