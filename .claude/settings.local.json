@@ -18,7 +18,10 @@
       "Bash(mail:*)",
       "Bash(mailq:*)",
       "Bash(/Users/kyle/Projects/github-kb/auto-update-internships-discord.sh:*)",
-      "Bash(git rev-parse:*)"
+      "Bash(git rev-parse:*)",
+      "Bash(tree:*)",
+      "Bash(python tests/test_weather_agent.py:*)",
+      "Bash(python3:*)"
     ]
   }
 }

@@ -135,6 +135,94 @@ Go daemon that monitors SimplifyJobs repos, scrapes job descriptions, analyzes w
 
 ---
 
+## AI Agent Infrastructure
+
+### [agntcy-docs](/agntcy-docs)
+Official documentation for AGNTCY - the open-source Internet of Agents (IoA) infrastructure project under Linux Foundation.
+**Updated:** 2026-01-31
+
+- **Tech Stack**: Material for MkDocs, Python, Go
+- **Project Origin**: Started by Outshift by Cisco in March 2025, donated to Linux Foundation in July 2025 with 75+ companies
+- **Core Mission**: Build open, interoperable infrastructure enabling AI agents to discover, compose, deploy, and evaluate multi-agent systems at scale
+- **Key Capabilities**:
+  1. **DISCOVER**: Find and evaluate agents for specific tasks
+  2. **COMPOSE**: Connect agents into workflows across any framework/vendor
+  3. **DEPLOY**: Run multi-agent systems securely at scale
+  4. **EVALUATE**: Monitor performance and improve over time
+- **Core Components**:
+  - **OASF (Open Agent Schema Framework)**: OCI-based extensible data model for describing agents (A2A, MCP servers, etc.)
+  - **Agent Directory**: Discover and announce agents/multi-agent apps, forming IoA inventory
+  - **SLIM (Secure Low-latency Interactive Messaging)**: Protocol for secure agent-to-agent communication with MLS/quantum-safe encryption, extends gRPC for pub/sub
+  - **Identity**: Decentralized identity management for agents and tools with verifiable credentials
+  - **Observability & Evaluation**: Telemetry and monitoring for multi-agent applications
+  - **Security**: Trust and protection tools for multi-agent systems
+- **Reference Implementation**: CoffeeAGNTCY demonstrates core components in action
+- **Formative Members**: Cisco, Dell Technologies, Google Cloud, Oracle, Red Hat
+- **Repository**: https://github.com/agntcy/docs
+
+### [agntcy-identity](/agntcy-identity)
+AGNTCY Identity system for onboarding, creating, and verifying identities for Agents, MCP Servers, and Multi-Agent Systems.
+**Updated:** 2026-01-31
+
+- **Tech Stack**: Decentralized identity technologies, Verifiable Credentials
+- **Key Features**:
+  - Decentralized identity management for AI agents and tools
+  - Verifiable credentials issuance and verification
+  - Secure and trustworthy agent interactions
+  - Integration with AGNTCY ecosystem components
+  - Support for MCP server identity verification
+  - Policy-based access control
+- **Use Cases**: Agent authentication, MCP server verification, multi-agent system trust establishment
+- **Repository**: https://github.com/agntcy/identity
+
+### [coffeeAgntcy](/coffeeAgntcy)
+Official AGNTCY reference implementation demonstrating multi-agent system patterns through a coffee company scenario.
+**Updated:** 2026-01-31
+
+- **Tech Stack**: AGNTCY App SDK, SLIM, NATS, A2A, MCP, LangGraph, Observe SDK, Identity Service
+- **Demo Applications**:
+  - **Corto**: Simple 2-agent demo (Supervisor + Q Grader) with A2A over SLIM
+  - **Lungo**: Advanced multi-agent system with two setups:
+    - Pub/Sub pattern: Auction supervisor + multiple farm agents + MCP servers
+    - Group Communication: Logistics workflow with shipper, accountant, helpdesk agents
+- **Key Features**:
+  - Request-reply, unicast, pub/sub, and group communication patterns
+  - Streaming responses support
+  - MCP integration (Weather, Payment servers)
+  - Identity Service with TBAC (Tool-Based Access Control)
+  - Observability via Observe SDK
+  - Transport-agnostic design (SLIM/NATS switchable)
+- **Learning Path**: Start with Corto for basics, then explore Lungo for advanced patterns
+- **Repository**: https://github.com/agntcy/coffeeAgntcy
+
+### [weather-agntcy](/weather-agntcy)
+极简天气查询多智能体系统，使用真实 AGNTCY SDK 实现，专注于展示核心 API 用法。
+**Updated:** 2026-01-31
+
+- **Tech Stack**: AGNTCY App SDK, A2A Protocol, Python asyncio
+- **代码量**: 约 580 行（含注释），6 个核心文件
+- **Architecture**: 2-agent system with real A2A communication
+  - Weather Agent: A2A Server (agent.py 35行 + agent_executor.py 80行 + weather_server.py 115行)
+  - Supervisor Agent: A2A Client (supervisor_agent.py 120行)
+- **Key Features**:
+  - 真实的 AGNTCY SDK 集成（AgntcyFactory, A2AClient, A2AStarletteApplication）
+  - OASF 标准的 Agent Card
+  - 支持两种传输模式：A2A HTTP（测试）和 SLIM（生产）
+  - 完整的 AgentExecutor 实现
+  - 详细的代码注释和日志
+- **学习价值**:
+  - 最简单的 AGNTCY SDK 使用示例
+  - 每个文件都很短，易于理解
+  - 展示 Server 和 Client 的完整实现
+  - 比 CoffeeAGNTCY 简单 3 倍（400行 vs 1500行）
+- **Usage**:
+  - Server: `python3 agents/weather/weather_server.py`
+  - Client: `python3 agents/supervisor/supervisor_agent.py`
+- **文档**: README.md（完整说明）+ QUICKSTART.md（快速上手）
+- **Repository**: Local project at /Users/kyle/Projects/github-kb/weather-agntcy
+
+---
+
 # GitHub Knowledge Rules
 
 When the user asks about GitHub repositories, issues, or pull requests:

@@ -1,0 +1,6 @@
+# 最小化依赖 - 使用真实 AGNTCY SDK
+agntcy-app-sdk>=0.4.1
+a2a-python>=0.3.0
+python-dotenv>=1.0.0
+uvicorn>=0.30.0
+fastapi>=0.115.0
